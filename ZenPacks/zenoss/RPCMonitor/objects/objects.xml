@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'rrdTemplates', 'RPCServer') -->
+<object id='/zport/dmd/Devices/Server/rrdTemplates/RPCServer' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="text" id="description" mode="w" >
+Monitors RPC server availability.
+</property>
+<tomanycont id='datasources'>
+<object id='rpc' module='ZenPacks.zenoss.RPCMonitor.datasources.RPCMonitorDataSource' class='RPCMonitorDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+RPCMonitor
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/RPC
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="rpcServer" mode="w" >
+${dev/id}
+</property>
+<property type="string" id="rpcCommand" mode="w" >
+${here/zRPCCommand}
+</property>
+<property type="int" id="port" mode="w" >
+0
+</property>
+<property type="string" id="protocol" mode="w" >
+UDP
+</property>
+<tomanycont id='datapoints'>
+<object id='time' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<!-- ('', 'zport', 'dmd', 'Events', 'Status', 'RPC') -->
+<object id='/zport/dmd/Events/Status/RPC' module='Products.ZenEvents.EventClass' class='EventClass'>
+</object>
+</objects>
