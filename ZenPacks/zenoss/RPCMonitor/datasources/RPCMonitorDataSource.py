@@ -20,7 +20,8 @@ from Products.ZenUtils.ZenTales import talesCompile, getEngine
 class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
     
     RPC_MONITOR = 'RPCMonitor'
-    
+    ZENPACKID = 'ZenPacks.zenoss.RPCMonitor'
+
     sourcetypes = (RPC_MONITOR,)
     sourcetype = RPC_MONITOR
 
