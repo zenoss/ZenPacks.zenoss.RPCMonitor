@@ -16,6 +16,7 @@ import Products.ZenModel.RRDDataSource as RRDDataSource
 from Products.ZenModel.ZenPackPersistence import ZenPackPersistence
 from AccessControl import ClassSecurityInfo, Permissions
 from Products.ZenUtils.ZenTales import talesCompile, getEngine
+from Products.ZenUtils.Utils import binPath
 
 class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
     
@@ -88,7 +89,7 @@ class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
         #          [-v]            Verbose 
         #          [-v -v]         Verbose - will print s
 
-        parts = ['check_rpc']
+        parts = [binPath('check_rpc')]
         if self.rpcServer:
             parts.append('-H %s' % self.rpcServer)
         if self.rpcCommand:
@@ -101,8 +102,7 @@ class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
             parts.append('-u')
 
         cmd = ' '.join(parts)
-        cmd = '$ZENHOME/libexec/' + \
-                    RRDDataSource.RRDDataSource.getCommand(self, context, cmd)
+        cmd = RRDDataSource.RRDDataSource.getCommand(self, context, cmd)
         return cmd
 
 
