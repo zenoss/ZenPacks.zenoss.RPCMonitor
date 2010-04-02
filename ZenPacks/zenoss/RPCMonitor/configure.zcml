@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter factory=".info.RPCMonitorDataSourceInfo"
+           for=".datasources.RPCMonitorDataSource.RPCMonitorDataSource"
+           provides=".interfaces.IRPCMonitorDataSourceInfo"
+           />
+  <utility provides="zope.schema.interfaces.IVocabularyFactory"
+           component=".info.rpcMonitorProtocolVocabulary"
+           name="rpcMonitorProtocolVocabulary"/>
+</configure>

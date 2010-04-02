@@ -32,7 +32,8 @@ class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
     rpcCommand = '${here/zRPCCommand'
     port = 0
     protocol = 'UDP'
-
+    protocolTypes = ['UDP', 'TCP']
+    
     _properties = RRDDataSource.RRDDataSource._properties + (
         {'id':'rpcServer', 'type':'string', 'mode':'w'},
         {'id':'rpcCommand', 'type':'string', 'mode':'w'},
