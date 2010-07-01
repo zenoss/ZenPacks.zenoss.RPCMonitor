@@ -39,6 +39,9 @@ UDP
 </property>
 <tomanycont id='datapoints'>
 <object id='time' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property type="text" id="zendoc" mode="w" >
+The amount of time that it takes to respond to a command
+</property>
 <property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
 GAUGE
 </property>
