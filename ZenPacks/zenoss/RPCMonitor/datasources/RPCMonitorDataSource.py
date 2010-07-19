@@ -29,7 +29,7 @@ class RPCMonitorDataSource(ZenPackPersistence, RRDDataSource.RRDDataSource):
     eventClass = '/Status/RPC'
         
     rpcServer = '${dev/id}'
-    rpcCommand = '${here/zRPCCommand'
+    rpcCommand = '${here/zRPCCommand}'
     port = 0
     protocol = 'UDP'
     protocolTypes = ['UDP', 'TCP']
