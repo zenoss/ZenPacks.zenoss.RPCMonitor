@@ -17,8 +17,8 @@ from Products.Zuul.utils import ZuulMessageFactory as _t
 
 class IRPCMonitorDataSourceInfo(IRRDDataSourceInfo):
     cycletime = schema.Int(title=_t(u'Cycle Time (seconds)'))
-    rpcServer = schema.Text(title=_t(u'RPC Server'))
-    rpcCommand = schema.Text(title=_t(u'RPC Command'))
+    rpcServer = schema.TextLine(title=_t(u'RPC Server'))
+    rpcCommand = schema.TextLine(title=_t(u'RPC Command'))
     port = schema.Int(title=_t(u'Port'))
     protocol = schema.Choice(title=_t(u'Protocol'),
                              vocabulary="rpcMonitorProtocolVocabulary")
