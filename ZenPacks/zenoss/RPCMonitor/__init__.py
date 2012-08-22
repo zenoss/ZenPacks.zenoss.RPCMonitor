@@ -28,7 +28,8 @@ class ZenPack(ZenPackBase):
 
 def onCollectorInstalled(ob, event):
     zpFriendly = 'RPCMonitor'
-    errormsg = '{0} binary cannot be found on {1}. It must be installed before {2} can function.'
+    errormsg = '{0} binary cannot be found on {1}. This is part of the nagios-plugins ' + \
+               'dependency, and must be installed before {2} can function.'
     
     verifyBin = 'check_rpc'
     code, output = ob.executeCommand('zenbincheck %s' % verifyBin, 'zenoss', needsZenHome=True)
