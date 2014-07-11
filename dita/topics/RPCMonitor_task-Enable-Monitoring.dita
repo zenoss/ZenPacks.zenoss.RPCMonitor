@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task
+  PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d53e67">
+  <title>Enable Monitoring</title>
+  <taskbody>
+    <context><p>The RPCMonitor template must be bound to the device class or device
+    you want to monitor. Follow these steps to enable monitoring:</p></context>
+    <steps-informal>
+      <ol>
+      <li>
+        <p>Select Infrastructure from the navigation bar.</p>
+      </li>
+
+      <li>
+        <p>Click the device name in the device list.</p>
+
+        <p>The device overview page appears.</p>
+      </li>
+
+      <li>
+        <p>Select Configuration Properties from the left panel.</p>
+      </li>
+
+      <li>
+        <p>Set the appropriate RPC command to test in the zRPCCommand
+        configuration property (for example, nfs or ypserv).</p>
+      </li>
+
+      <li>
+        <p>Click <b>Save</b>.</p>
+      </li>
+
+      <li>
+        <p>Expand Monitoring Templates, and then select Device from the
+        left panel.</p>
+      </li>
+
+      <li>
+        <p>Select Bind Templates from the Action menu.</p>
+
+        <p>The Bind Templates dialog appears.</p>
+      </li>
+
+      <li>
+        <p>Add the RPCServer template to the list of selected templates,
+        and then click <b>Submit</b>.</p>
+
+        <p>The RPCServer template is added to the lists of monitoring
+        templates. You can now collect the RPCServer server metrics from the
+        device.</p>
+      </li>
+    </ol></steps-informal></taskbody></task>
